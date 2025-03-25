@@ -71,9 +71,13 @@ def cadastrar():
 
         print("cadastrou")
 
+
         nome.delete(0, END)
         email.delete(0, END)
         telefone.delete(0, END)
+
+        tabela.insert("", END, values=(cursor.lastrowid, nome_cliente, email_cliente, telefone_cliente))
+
     else:
         messagebox.showwarning("Atenção", "Preencha todos os campos")
 
